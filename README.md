@@ -99,3 +99,45 @@ The objective of this analysis is to develop a **machine learning model** to pre
    - The conclusions will aim to **contextualize the results** within the dataset's **limitations**, providing **insights into the relationships** between **car attributes** and their **prices**, while outlining **areas for further exploration**.
    - Based on the findings, **actionable recommendations** will be presented to improve future analyses, including potential **data enhancements**, **advanced feature engineering**, and **alternative modeling approaches**.
 
+-----
+# **Overall Model Review**
+
+**Data Details:**
+- The **cleaned data** used for modeling contains **2,613 rows** and **9 columns**.
+- The **training data** consists of **2,090 rows** and **7 columns**.
+- The **test data** contains **523 rows**.
+
+**Model Reability:**
+Based on the analysis of 100 predictions, the model shows mixed results:
+
+- **8 predictions** are **significantly off**, indicating **major errors**.
+- **42 predictions** are **outside the expected range**, but not extreme, showing difficulty with boundary cases.
+- **50 predictions** are within the **acceptable range**, indicating moderate success.
+- 
+# **Conclusion**
+
+The machine learning model developed to predict used car prices on **Syarah.com** has shown some promising results but also highlights areas for improvement. 
+
+**Key Insights:**
+- **Accuracy**: The model's predictions are generally **within an acceptable range**, with **50% of predictions** being accurate. However, there are **8% predictions** that are **significantly off**, and **42% predictions** fall **outside the expected range**.
+- **Feature Impact**: The model is strongly influenced by **engine size** and **year**, which have a **positive correlation** with car prices. This makes sense as larger engines and newer vehicles tend to be priced higher.
+- **Training Data**: The small dataset of **2,090 training rows** limits the model’s ability to generalize well across the full range of potential car listings. The **data imbalance** and absence of detailed information (such as car condition and color) also affect the model's reliability.
+- **Challenges**: The model struggles to handle **extreme values** and **edge cases**, likely due to a lack of sufficient data to cover all possible variations in car listings.
+
+**Key Attention Points**: Engine Size Inconsistencies
+- **Engine Size Below 2000cc**: Premium brands like **BMW**, **Mercedes**, and **Lexus** rarely have models with engine sizes below **2000cc**.
+- **Engine Size Above 7000cc**: Engine sizes above **7000cc** are typically found in **supercars**, not regular luxury vehicles from these brands.
+- **Impact on Price Predictions**: These inconsistencies can lead to unrealistic price estimates—either inflated for large engines or underestimated for smaller ones.
+- **Possible Data Errors**: There may be issues such as data entry mistakes or modifications/variants not properly recorded.
+
+- # **Recommendations**
+
+To further improve the model, consider the following suggestions:
+
+- **Increase the Training Dataset**: Expand the dataset to include a broader range of car attributes, especially **different conditions** and **price ranges**, to improve the model's ability to generalize better and handle outliers and edge cases.
+
+- **Improve Feature Engineering**: Enhance the model by adding more relevant features such as **car condition**, **modifications**, or even **vehicle history** to better capture the relationships between features and target variable, while ensuring consistency in engine size data.
+
+- **Address Engine Size Inconsistencies**: Focus on cleaning and validating the **engine size** data, especially for premium brands like **BMW**, **Mercedes**, and **Lexus**. Ensure that extreme values (both below 2000cc and above 7000cc) are handled correctly to avoid unrealistic predictions.
+
+- **Monitor Model Performance**: Continuously evaluate the model's performance, especially in predicting edge cases or extreme values, to ensure that the model can adapt to any inconsistencies or errors in the data.
