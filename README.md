@@ -113,7 +113,7 @@ Based on the analysis of 100 predictions, the model shows mixed results:
 - **8 predictions** are **significantly off**, indicating **major errors**.
 - **42 predictions** are **outside the expected range**, but not extreme, showing difficulty with boundary cases.
 - **50 predictions** are within the **acceptable range**, indicating moderate success.
-- 
+
 # **Conclusion**
 
 The machine learning model developed to predict used car prices on **Syarah.com** has shown some promising results but also highlights areas for improvement. 
